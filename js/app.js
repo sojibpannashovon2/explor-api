@@ -1,10 +1,4 @@
 
-function loadData2() {
-
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-        .then(res => res.json())
-        .then(json => console.log(json))
-}
 
 function userDisplay() {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -13,5 +7,14 @@ function userDisplay() {
 }
 
 function displayUser(data) {
-    console.log(data);
+    // console.log(data);
+    const ul = document.getElementById('user-list');
+    for (user of data) {
+        // console.log(user.name);
+        const li = document.createElement('li');
+        li.innerText = user.name;
+        ul.appendChild(li);
+
+    }
+
 }
